@@ -7,6 +7,10 @@ app.use(express.urlencoded({extended:false}));
 
 app.use("/api",apiRoutes);
 
+app.get("/",(req,res)=>{
+      res.send("hello")
+})
+
 const PORT = 7000
 
 app.listen(process.env.PORT || PORT,()=>{
