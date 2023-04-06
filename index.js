@@ -1,10 +1,11 @@
 const express = require("express");
+const apiRoutes =  require("./routes/apiRoutes");
 
 const app = new express();
+app.use(express.json()); // to accept json data
+app.use(express.urlencoded({extended:false}));
 
-app.get("/",(req,res)=>{
-      res.send("Hello");
-})
+app.use("/api",apiRoutes);
 
 const PORT = 7000
 
